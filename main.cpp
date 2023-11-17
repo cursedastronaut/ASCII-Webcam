@@ -110,11 +110,17 @@ int main(int argc, char *argv[]) {
 			ASSERT(userX+1 >= argc, "ERROR: Argument -x is empty.");
 			wished_size_x = toInt(argv[userX+1]);
 			ASSERT(wished_size_x == -1, "ERROR: Argument -x has an invalid value.");
+			std::string temp = "ERROR: Argument -x has a value above maximum (";
+			temp += to_string(imageFormat.fmt.pix.width) + ").";
+			ASSERT(wished_size_x > imageFormat.fmt.pix.width, temp.c_str());
 		}
 		if (userY > 0) {
 			ASSERT(userY+1 >= argc, "ERROR: Argument -y is empty.");
 			wished_size_y = toInt(argv[userY+1])-1;
 			ASSERT(wished_size_y == -1, "ERROR: Argument -y has an invalid value.");
+			std::string temp = "ERROR: Argument -y has a value above maximum (";
+			temp += to_string(imageFormat.fmt.pix.height) + ").";
+			ASSERT(wished_size_y > imageFormat.fmt.pix.height, temp.c_str());
 		}
 	}
 
