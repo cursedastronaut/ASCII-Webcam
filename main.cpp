@@ -7,6 +7,8 @@ int main(int argc, char *argv[]) {
 	int userVideo = false;
 	int userX = false;
 	int userY = false;
+	string asciiCharList = DEFAULT_STRING;
+
 	for (uint8_t i = 1; i < argc; ++i) {
 		if (strcmp(argv[i], "-video") == 0) {
 			userVideo = i;
@@ -17,6 +19,9 @@ int main(int argc, char *argv[]) {
 		} else if (strcmp(argv[i], "--help") == 0) {
 			help();
 			return 0;
+		} else if (strcmp(argv[i], "-string") == 0) {
+			ASSERT(i == argc, "ERROR: Argument -string is empty");
+			asciiCharList = argv[i+1];
 		}
 	}
 	
@@ -162,7 +167,7 @@ int main(int argc, char *argv[]) {
 				uint8_t green = rgbBuffer[(y * imageFormat.fmt.pix.width + x) * 3 + 1];
 				uint8_t blue = rgbBuffer[(y * imageFormat.fmt.pix.width + x) * 3 + 2];
 
-				char asciiChar = grayToChar(0.3 * red + 0.59 * green + 0.11 * blue);
+				char asciiChar = grayToChar(0.3 * red + 0.59 * green + 0.11 * blue, asciiCharList);
 				cout << asciiChar;
 			}
 			cout << endl;

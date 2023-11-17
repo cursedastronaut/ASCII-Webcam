@@ -2,11 +2,10 @@
 
 using namespace std;
 
-char grayToChar(int gray) {
-    const char CHAR_LIST[] = " .',;:clodxkO0KXNWM%@";
-    int num_chars = sizeof(CHAR_LIST) - 1;
-
-    return CHAR_LIST[std::min(static_cast<int>(std::round(gray * num_chars / 255.0)), num_chars - 1)];
+char grayToChar(int gray, string &charList) {
+	int numChars = charList.size();
+	
+    return charList[std::min(static_cast<int>(std::round(gray * numChars / 255.0)), numChars - 1)];
 }
 
 void decodeMJPEGBuffer(char* mjpegBuffer, size_t bufferSize, uint8_t* rgbBuffer, uint32_t width, uint32_t height) {

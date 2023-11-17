@@ -25,7 +25,7 @@
 #define WISHED_SIZE_Y 45
 #define DEFAULT_STRING " .:-=+*#%@"
 
-char grayToChar(int gray);
+char grayToChar(int gray, std::string &charList);
 void decodeMJPEGBuffer(char* mjpegBuffer, size_t bufferSize, uint8_t* rgbBuffer, uint32_t width, uint32_t height);
 int toInt(const char* index);
 void help();

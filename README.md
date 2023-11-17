@@ -10,5 +10,8 @@ Using command line arguments, you can easily change the program's behavior.
 
 - `-y [height]` | Allows user to enter a different height. Cannot be above 180.
 
+## Compilation
+Run `g++ main.cpp ascii.cpp -ljpeg -o webcam`
+
 ## Credits
 Webcam calls by @sammy17.
