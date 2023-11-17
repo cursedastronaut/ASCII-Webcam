@@ -4,7 +4,7 @@ using namespace std;
 
 char grayToChar(int gray, string &charList) {
 	int numChars = charList.size();
-	
+
     return charList[std::min(static_cast<int>(std::round(gray * numChars / 255.0)), numChars - 1)];
 }
 
@@ -58,7 +58,9 @@ void help() {
 			<< "\t\tChange output's height (under or equal to 180)"
 			<< "\t-video [device]" << endl
 			<< "\t\tUse another camera (/dev/video0)" << endl
+			<< "\t-string [string]" << endl
+			<< "\t\tUse other characters. PUT IT BETWEEN QUOTES!"
 			<< "\t--help" << endl
-			<< "\t\tShow this" << endl
+			<< "\t\tShows this." << endl
 			<< "Made by @cursedastronaut on GitHub." << endl;
 }
