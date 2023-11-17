@@ -108,8 +108,7 @@ int main(int argc, char *argv[]) {
 	{
 		if (userX > 0) {
 			ASSERT(userX+1 >= argc, "ERROR: Argument -x is empty.");
-			wished_size_x = toInt(argv[userX+1])-1;
-			cout << "bonol" << wished_size_x << endl;
+			wished_size_x = toInt(argv[userX+1]);
 			ASSERT(wished_size_x == -1, "ERROR: Argument -x has an invalid value.");
 		}
 		if (userY > 0) {

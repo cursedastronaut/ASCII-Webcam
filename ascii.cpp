@@ -35,7 +35,6 @@ void decodeMJPEGBuffer(char* mjpegBuffer, size_t bufferSize, uint8_t* rgbBuffer,
 
 int toInt(const char* index) {
 	std::string temp = index;
-	std::cout << "temp:" << temp.size();
 	if (temp.size() == 0)
 		return 0;
 	int result = 0;	
