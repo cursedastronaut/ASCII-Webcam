@@ -14,6 +14,9 @@ int main(int argc, char *argv[]) {
 			userX = i;
 		} else if (strcmp(argv[i], "-y") == 0) {
 			userY = i;
+		} else if (strcmp(argv[i], "--help") == 0) {
+			help();
+			return 0;
 		}
 	}
 	

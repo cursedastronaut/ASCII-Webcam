@@ -1,5 +1,7 @@
 #include "ascii.hpp"
 
+using namespace std;
+
 char grayToChar(int gray) {
     const char CHAR_LIST[] = " .',;:clodxkO0KXNWM%@";
     int num_chars = sizeof(CHAR_LIST) - 1;
@@ -47,4 +49,17 @@ int toInt(const char* index) {
 		result += (temp[i] - '0') * std::pow(10, temp.size()-1-i);
 	}
 	return result;
+}
+
+void help() {
+	cout	<< "ASCII Webcam" << endl
+			<< "\t-x [width]" << endl
+			<< "\t\tChange output's width (under or equal to 320)" << endl
+			<< "\t-y [height]" << endl
+			<< "\t\tChange output's height (under or equal to 180)"
+			<< "\t-video [device]" << endl
+			<< "\t\tUse another camera (/dev/video0)" << endl
+			<< "\t--help" << endl
+			<< "\t\tShow this" << endl
+			<< "Made by @cursedastronaut on GitHub." << endl;
 }

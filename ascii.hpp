@@ -28,3 +28,4 @@
 char grayToChar(int gray);
 void decodeMJPEGBuffer(char* mjpegBuffer, size_t bufferSize, uint8_t* rgbBuffer, uint32_t width, uint32_t height);
 int toInt(const char* index);
+void help();
