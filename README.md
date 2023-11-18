@@ -5,12 +5,12 @@ It currently only works in **Linux**.
 ## Options
 Using command line arguments, you can easily change the program's behavior.
 
-- `-video [device]` | Allows user to enter another camera to use. By default, it is `/dev/video0`.
-- `-x [width]` | Allows user to enter a different width. Cannot be above 320.
+- `--video [device]` | Allows user to enter another camera to use. By default, it is `/dev/video0`.
+- `--x [width]` | Allows user to enter a different width. Cannot be above 320.
 
-- `-y [height]` | Allows user to enter a different height. Cannot be above 180.
+- `--y [height]` | Allows user to enter a different height. Cannot be above 180.
 
-- `-string [string]` | Allows user to enter their own characters to handle contrast.
+- `--string [string]` | Allows user to enter their own characters to handle contrast.
 
 ## Compilation
 Run `g++ main.cpp ascii.cpp -ljpeg -o webcam`

@@ -52,15 +52,17 @@ int toInt(const char* index) {
 
 void help() {
 	cout	<< "ASCII Webcam" << endl
-			<< "\t-x [width]" << endl
+			<< "\t--x [width]" << endl
 			<< "\t\tChange output's width (under or equal to 320)" << endl
-			<< "\t-y [height]" << endl
+			<< "\t--y [height]" << endl
 			<< "\t\tChange output's height (under or equal to 180)"
-			<< "\t-video [device]" << endl
+			<< "\t--video [device]" << endl
 			<< "\t\tUse another camera (/dev/video0)" << endl
-			<< "\t-string [string]" << endl
+			<< "\t--string [string]" << endl
 			<< "\t\tUse other characters. PUT IT BETWEEN QUOTES!" << endl
 			<< "\t\tExample: \" .',;:clodxkO0KXNWM%@\"" << endl
+			<< "\t--reverse" << endl
+			<< "\t\tReverses horizontally the stream."
 			<< "\t--help" << endl
 			<< "\t\tShows this." << endl
 			<< "Made by @cursedastronaut on GitHub." << endl;

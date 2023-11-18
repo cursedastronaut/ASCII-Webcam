@@ -7,21 +7,24 @@ int main(int argc, char *argv[]) {
 	int userVideo = false;
 	int userX = false;
 	int userY = false;
+	bool shouldReverse = false;
 	string asciiCharList = DEFAULT_STRING;
 
 	for (uint8_t i = 1; i < argc; ++i) {
-		if (strcmp(argv[i], "-video") == 0) {
+		if (strcmp(argv[i], "--video") == 0) {
 			userVideo = i;
-		} else if (strcmp(argv[i], "-x") == 0) {
+		} else if (strcmp(argv[i], "--x") == 0) {
 			userX = i;
-		} else if (strcmp(argv[i], "-y") == 0) {
+		} else if (strcmp(argv[i], "--y") == 0) {
 			userY = i;
 		} else if (strcmp(argv[i], "--help") == 0) {
 			help();
 			return 0;
-		} else if (strcmp(argv[i], "-string") == 0) {
+		} else if (strcmp(argv[i], "--string") == 0) {
 			ASSERT(i == argc, "ERROR: Argument -string is empty");
 			asciiCharList = argv[i+1];
+		} else if (strcmp(argv[i], "--reverse") == 0) {
+			shouldReverse = true;
 		}
 	}
 	
@@ -157,7 +160,7 @@ int main(int argc, char *argv[]) {
 
 		// Loop to display decoded pixels
 		for (uint32_t y = 0; y < imageFormat.fmt.pix.height; y+=yJump) {
-			for (uint32_t x = 0; x < imageFormat.fmt.pix.width; x+=xJump) {
+			for (uint32_t x = (shouldReverse ? imageFormat.fmt.pix.width - 1: 0); x < imageFormat.fmt.pix.width; x+=(shouldReverse ? -xJump : xJump)) {
 				// Assuming rgbBuffer is a buffer to store the RGB values after decoding
 				uint8_t red = rgbBuffer[(y * imageFormat.fmt.pix.width + x) * 3];
 				uint8_t green = rgbBuffer[(y * imageFormat.fmt.pix.width + x) * 3 + 1];
