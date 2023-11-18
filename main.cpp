@@ -148,12 +148,8 @@ int main(int argc, char *argv[]) {
 			perror("Could not dequeue the buffer, VIDIOC_DQBUF");
 			return 1;
 		}
-		// Frames get written after dequeuing the buffer
+		
 		std::cout << "\033[H";
-		cout << "Buffer has: " << (double)bufferinfo.bytesused / 1024
-				<< " KBytes of data and " << bufferinfo.length << "elements" << endl;
-		cout << "x:" << imageFormat.fmt.pix.height << " " << V4L2_PIX_FMT_MJPEG <<
-		endl;
 
 		// Call decodeMJPEGBuffer to transform MJPEG buffer into RGB buffer
 		uint8_t* rgbBuffer = new uint8_t[imageFormat.fmt.pix.width * imageFormat.fmt.pix.height * 3];
