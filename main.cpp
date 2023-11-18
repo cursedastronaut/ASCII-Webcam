@@ -149,7 +149,7 @@ int main(int argc, char *argv[]) {
 			return 1;
 		}
 		// Frames get written after dequeuing the buffer
-
+		std::cout << "\033[H";
 		cout << "Buffer has: " << (double)bufferinfo.bytesused / 1024
 				<< " KBytes of data and " << bufferinfo.length << "elements" << endl;
 		cout << "x:" << imageFormat.fmt.pix.height << " " << V4L2_PIX_FMT_MJPEG <<

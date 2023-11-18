@@ -59,7 +59,8 @@ void help() {
 			<< "\t-video [device]" << endl
 			<< "\t\tUse another camera (/dev/video0)" << endl
 			<< "\t-string [string]" << endl
-			<< "\t\tUse other characters. PUT IT BETWEEN QUOTES!"
+			<< "\t\tUse other characters. PUT IT BETWEEN QUOTES!" << endl
+			<< "\t\tExample: \" .',;:clodxkO0KXNWM%@\"" << endl
 			<< "\t--help" << endl
 			<< "\t\tShows this." << endl
 			<< "Made by @cursedastronaut on GitHub." << endl;
